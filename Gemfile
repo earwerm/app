@@ -32,14 +32,20 @@ group :doc do
   gem 'sdoc', require: false
 end
 
-# Use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
+group :development, :test do
+  gem 'pry-rails'
+  gem 'pry-debugger'
+  gem 'pry-stack_explorer'
 
-# Use unicorn as the app server
-# gem 'unicorn'
+  gem 'annotate'
 
-# Use Capistrano for deployment
-# gem 'capistrano', group: :development
+  gem 'protected_attributes'
 
-# Use debugger
-# gem 'debugger', group: [:development, :test]
+  gem 'quiet_assets'
+  gem 'better_errors'
+  # BetterErrors.editor = :sublime if defined? BetterErrors  (initializer)
+  # http://localhost:3000/__better_errors (reports last exception for debugging)
+  gem 'binding_of_caller'
+  gem 'meta_request'
+  # Add RailsPanel extension in the Chrome Web Store
+end
