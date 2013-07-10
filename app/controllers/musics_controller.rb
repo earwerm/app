@@ -7,6 +7,13 @@ class MusicsController < ApplicationController
     @musics = Music.all
   end
 
+  def lookup
+    title = params[:query].gsub(' ', '+')
+    url = "http://developer.echonest.com/api/v4/[type]/[method]"
+    echonest = Echonest('9JJUAQS0ZBF2SK5VU')
+    @info = JSON(html)
+  end
+
   # GET /musics/1
   # GET /musics/1.json
   def show
